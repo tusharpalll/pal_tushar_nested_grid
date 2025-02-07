@@ -1,51 +1,46 @@
-body {
-    font-size: 16px; 
-}
 
-.grid-con {
-    display: grid;
-    grid-template-columns: 1fr 1fr 0 0;
-    grid-gap: 20px;
+.col-span-1 { 
+    background-color: pink; 
     padding: 10px;
 }
 
-#col1 {
-    background-color: pink;
+.col-span-2{ 
+    background-color: red;  
+    width: 50%;
+    padding: 10px;
 }
 
-#col2 {
-    background-color: red;
+.col-span-3, .col-span-4 { 
+    display: none;
+    width: 50%; 
+    padding: 10px;
+
 }
 
-#col3, #col4 {
-    display: none; /* Hide columns 3 and 4 on mobile */
-}
-
-/* Media query for screens larger than 641px */
-@media screen and (min-width: 641px) {
-    body {
-        font-size: 24px; /* Increase font size */
-    }
-
+@media screen and (min-width: 641px) { 
     .grid-con {
-        grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 equal-width columns */
+        grid-template-columns: repeat(4, 1fr);  
     }
 
-    #col1 {
+    .col-span-1 { 
         background-color: blue;
     }
 
-    #col2 {
-        background-color: purple;
+    .col-span-2 { 
+        background-color: purple;  
     }
 
-    #col3 {
-        background-color: grey;
-        display: block; /* Show column 3 */
+    .col-span-3 { 
+        background-color: grey;  
+        display: block;  
     }
 
-    #col4 {
-        background-color: brown;
-        display: block; /* Show column 4 */
+    .col-span-4 { 
+        background-color: brown; 
+        display: block;  
+    }
+
+    body {
+        font-size: 1.5em;
     }
 }
